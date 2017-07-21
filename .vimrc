@@ -16,7 +16,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 
 " All of your Plugins must be added before teh following line
@@ -51,13 +51,13 @@ nnoremap <space> za
 
 " Add proper PEP8 indentation for python
 au BufNewFile,BufRead *.py
-  \ set tabstop=4
-  \ set softtabstop=4
-  \ set shiftwidth=4
-  \ set textwidth=125
-  \ set expandtab
-  \ set autoindent
-  \ set fileformat=unix
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4 |
+  \ set textwidth=125 |
+  \ set expandtab |
+  \ set autoindent |
+  \ set fileformat=unix |
 
 " flag unnecessary whitespace
 au BufRead,BufNewFile *.py, *pyw, *.c, *.h match BadWhitespace /\s\+$/
@@ -70,4 +70,8 @@ syntax on
 colorscheme zenburn
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" enable line numbers
+set nu
+
 
