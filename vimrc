@@ -54,21 +54,42 @@ set foldlevel=99
 " enable folding with the spacebar
 nnoremap <space> za
 
+
+
+" setup for python virtualenv support
+py3 << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUA_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  sys.path.insert(0, project_base_dir)
+  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+
 " Add proper PEP8 indentation for python
 au BufNewFile,BufRead *.py
-  \ set tabstop=4 |
+  \ set tabstop=4 | 
   \ set softtabstop=4 |
   \ set shiftwidth=4 |
-  \ set textwidth=125 |
+  \ set textwidth=120 |
   \ set expandtab |
   \ set autoindent |
-  \ set fileformat=unix |
+  \ set fileformat=unix
 
 " remove whitespaces on save
 autocmd BufWritePre * :%s/\s\s+$//e
 
-" flag unnecessary whitespace
-au BufRead,BufNewFile *.py, *pyw, *.c, *.h match BadWhitespace /\s\+$/
+" use the below highlight group when displaying bad whitespace is desired
+highlight BadWhitespace ctermbg=red guibg=red
+
+" display tabs at the beginning of a line in Python mode as bad
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+
+" mark trailing whitespace as bad
+au BufRead,BufNewFile *.py,*pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 
@@ -104,4 +125,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_n"
 " shortcut key to nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+" Configure syntastic
+let g:syntastic_python_checkers = ['flake8']
+
+" configure simplyfold
+let g:SimpylFold_dockstring_preview=1
 
