@@ -47,6 +47,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" move escape to caps lock
+" TBD
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -130,4 +133,7 @@ let g:syntastic_python_checkers = ['flake8']
 
 " configure simplyfold
 let g:SimpylFold_dockstring_preview=1
+
+" Word wrap for markdown files
+au BufNewFile,BufRead *.md set wrap
 
