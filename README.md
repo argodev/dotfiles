@@ -20,3 +20,9 @@ $ vim +PluginInstall +qall
 $ ln -s ~/workspace/argodev/dotfiles/vimrc ~/.vimrc
 ```
 
+Note, for TMUX, I re-mapped my caps lock key to be an additional control-key
+
+```bash
+$ setxkbmap -option caps:ctrl_modifier
+
+```
