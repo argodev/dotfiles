@@ -23,6 +23,9 @@ $ vim +PluginInstall +qall
 
 ```bash
 $ ln -s ~/workspace/argodev/dotfiles/vimrc ~/.vimrc
+$ ln -s ~/workspace/argodev/dotfiles/bash_aliases ~/.bash_aliases
+$ ln -s ~/workspace/argodev/dotfiles/bashrc ~/.bashrc
+
 ```
 
 Note, for TMUX, I re-mapped my caps lock key to be an additional control-key
