@@ -122,6 +122,7 @@ fi
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
 source $HOME/.local/bin/virtualenvwrapper.sh
 
 # make capslock as escape
@@ -131,8 +132,6 @@ setxkbmap -option caps:escape
 # stuff I added per drmikehenry
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
-
-
 
 
 
