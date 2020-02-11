@@ -153,16 +153,16 @@ autocmd Syntax go normal zR
 " PYTHON Stuff
 "
 " setup for python virtualenv support
-"py3 << EOF
-"import os.path
-"import sys
-"import vim
-"if 'VIRTUA_ENV' in os.environ:
-"  project_base_dir = os.environ['VIRTUAL_ENV']
-"  sys.path.insert(0, project_base_dir)
-"  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
-"  execfile(activate_this, dict(__file__=activate_this))
-"EOF
+py3 << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUA_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  sys.path.insert(0, project_base_dir)
+  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 
 " Add proper PEP8 indentation for python
@@ -173,10 +173,11 @@ au BufNewFile,BufRead *.py
   \ set textwidth=100 |
   \ set expandtab |
   \ set autoindent |
-  \ set fileformat=unix
+  \ set fileformat=unix |
+  \ set foldmethod=indent
 
 let python_highlight_all=1
-
+let g:SimpylFold_docstring_preview=1
 
 
 "==============================================================================
@@ -283,3 +284,19 @@ au filetype go inoremap <buffer> . .<C-x><C-o>
 "nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 
+
+" Ale Configuration
+"""" Better formatting fo worp/ale
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%] [%...code...%]'
+"""" Enable completion where available.
+let g:ale_completion_enabled = 1
+""" Customize linters that are turned on
+let g:ale_linters = {
+   \   'python': ['flake8'],
+   \}
+let g:ale_set_highlights = 0
+
+" TAGBAR
+nmap <F8> :TagbarToggle<CR>
