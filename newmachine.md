@@ -2,8 +2,9 @@
 
 ```
 sudo apt update
-sudo apt install htop vim tmux build-essential git oathtool dconf-cli 
-uuid-runtime python3-pip python3-dev
+sudo apt install htop vim tmux build-essential git oathtool dconf-cli \
+    uuid-runtime python3-pip python3-dev python3-gpg p7zip p7zip-rar \
+    p7zip-full
 ```
 
 
@@ -41,6 +42,9 @@ bash -c  "$(wget -qO- https://git.io/vQgMr)"
 # setup python stuff
 sudo pip install virtualenv
 pip install virtualenvwrapper
+
+
+https://www.dropbox.com/install
 
 
 
