@@ -202,39 +202,50 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 
 "-----------------------------------------------------------------------------
-" AIRLINE CONFIGURATION
+" POWERLINE CONFIGURATION
+"
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+set laststatus=2
+
+
+
+
+"
 "
 " git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 "
 " air-line plugin specific commands
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
 
 " unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
 
 
 "-----------------------------------------------------------------------------
