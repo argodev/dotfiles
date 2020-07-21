@@ -48,6 +48,21 @@ https://www.dropbox.com/install
 
 
 
+# check swap space
+sudo swapon --show
+
+
+sudo fallocate -l 8G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+free -h
+
+# make it permanent
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
 ```
 
 
