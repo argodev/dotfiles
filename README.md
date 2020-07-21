@@ -42,4 +42,64 @@ setxkbmap -option caps:escape
 # set link to tmux.conf
 ln -s ~/workspace/argodev/dotfiles/tmux.conf ~/.tmux.conf
 
+
+```
+
+## Other stuff I need
+
+```bash
+mkdir -p ~/workspace/externals
+cd ~/workspace/externals
+
+# pwndbg
+git clone https://github.com/pwndbg/pwndbg
+cd pwndbg
+./setup.sh
+
+
+# setup update alternatives stuff
+mkdir -p ~/.local/bin
+sudo update-alternatives --install $HOME/.local/bin/python python /usr/bin/python3 20
+sudo update-alternatives --install $HOME/.local/bin/python python /usr/bin/python2 10
+
+# switch when desired:
+update-alternatives --config python
+
+
+# splitmind
+cd ~/workspace/externals
+git clone https://github.com/jerdna-regeiz/splitmind
+
+
+# setup/install ropper
+pip install capstone
+pip install filebytes
+pip install keystone-engine
+sudo pip install pyvex
+
+
+cd ~/workspace/externals
+git clone https://github.com/sashs/Ropper.git
+cd Ropper
+sudo python setup.py install
+
+cd ~/workspace/externals
+git clone https://github.com/JonathanSalwan/ROPgadget.git
+sudo python setup.py install
+
+
+# setup pwntools
+sudo apt update
+sudo apt install python3 python3-pip python3-dev git libssl-dev libffi-dev \
+    build-essential
+sudo python3 -m pip install --upgrade pip
+sudo python3 -m pip install --upgrade pwntools
+
+
+# radare2
+cd ~/workspace/externals
+git clone https://github.com/radareorg/radare2.git
+cd radare2
+sys/install.sh
+
 ```
