@@ -137,11 +137,13 @@ export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
 
 # POWERLINE CONFIGURATION
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. $HOME/workspace/externals/powerline/powerline/bindings/bash/powerline.sh
-
+#if [ -f `which powerline-daemon` ];
+#then
+#    powerline-daemon -q
+#    POWERLINE_BASH_CONTINUATION=1
+#    POWERLINE_BASH_SELECT=1
+#    source $HOME/workspace/externals/powerline/powerline/bindings/bash/powerline.sh
+#fi
 
 PATH=$PATH:/opt/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 A5B02FDB-5A8A-6E9D-043A-E3E779CD8FFB
 PATH=$PATH:/opt/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 1018F6BE-5313-9CBC-2B4D-C2F5A2B2EEF3

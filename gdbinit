@@ -17,4 +17,8 @@ import splitmind
   .show("regs", on="legend")                                                     
   .below(of="backtrace", cmd="python3", size="30%")                              
 ).build(nobanner=True)                                                           
-end   
+end  
+
+# let's turn off the auto-follow of child
+set follow-fork-mode parent
+# pwndbg defaults to child
