@@ -67,13 +67,14 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 
 
-sudo apt install socat
+- sudo apt install socat
+
 sudo pip3 install psutil
 sudo pip3 install pyuv
 sudo pip3 install i3ipc
-sudo apt install x11-server-utils
+- sudo apt install x11-server-utils
 pip3 install powerline-status
-sudo apt install fonts-powerline
+- sudo apt install fonts-powerline
 
 
 mkdir -p ~/workspace/externals

@@ -58,9 +58,8 @@ cd pwndbg
 
 
 # setup update alternatives stuff
-mkdir -p ~/.local/bin
-sudo update-alternatives --install $HOME/.local/bin/python python /usr/bin/python3 20
-sudo update-alternatives --install $HOME/.local/bin/python python /usr/bin/python2 10
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 10
 
 # switch when desired:
 update-alternatives --config python
