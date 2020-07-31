@@ -17,8 +17,8 @@ if [ ! -d $PLUGDIR ]; then
 fi
 
 # vim airline for goodness
-LoadPlugin vim-airline vim-airline/vim-airline
-LoadPlugin vim-airline-themes vim-airline/vim-airline-themes
+#LoadPlugin vim-airline vim-airline/vim-airline
+#LoadPlugin vim-airline-themes vim-airline/vim-airline-themes
 
 # NERDTree for file exploring
 LoadPlugin nerdtree scrooloose/nerdtree

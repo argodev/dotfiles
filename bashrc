@@ -130,6 +130,7 @@ setxkbmap -option caps:escape
 # caps:ctrl_modifier
 
 # stuff I added per drmikehenry
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
