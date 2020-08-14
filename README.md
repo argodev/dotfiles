@@ -100,5 +100,32 @@ cd ~/workspace/externals
 git clone https://github.com/radareorg/radare2.git
 cd radare2
 sys/install.sh
-
 ```
+
+
+sudo apt install zsh
+chsh -s /usr/bin/zsh
+
+
+install zsh
+
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+source ~/.zshrc
+
+# setup vimplug for neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       
+# ~/.config/nvim/init.vim
+
+:PlugInstall
+
+
+
+
+Other misc stuff I'm finding need to be done...
+
+
