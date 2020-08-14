@@ -129,3 +129,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 Other misc stuff I'm finding need to be done...
 
 
+ln -s ~/workspace/argodev/dotfiles/init.vim ~/.config/nvim/init.vim
