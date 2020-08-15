@@ -130,3 +130,8 @@ Other misc stuff I'm finding need to be done...
 
 
 ln -s ~/workspace/argodev/dotfiles/init.vim ~/.config/nvim/init.vim
+
+# install vimplug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    

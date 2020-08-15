@@ -139,7 +139,8 @@ call plug#end()
 
 " configure the main settings of the color scheme
 " color scheme
-colorscheme kalisi
+"colorscheme kalisi
+colorscheme argonaut
 set background=dark
 set t_Co=256
 
