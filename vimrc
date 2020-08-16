@@ -227,6 +227,8 @@ colorscheme neodark
 
 "colorscheme palenight
 "set t_Co=256
+" adding to help with tmux?
+set term=screen-256color
 " NOTE: If we place this earlier, it doesn't have the affect it should
 highlight ColorColumn ctermbg=0
 
@@ -408,4 +410,12 @@ nmap <F8> :TagbarToggle<CR>
 "
 " KEY REMAPS
 nnoremap <leader>u :UndotreeToggle<cr>
+
+" trying to play nicely with tmux...
+
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
 
