@@ -133,6 +133,33 @@ ln -s ~/workspace/argodev/dotfiles/p10k.zsh ~/.p10k.zsh
 
 # full reboot to ensure we pick up the new shell
 
+# install golang
+wget https://golang.org/dl/go1.15.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.15.linux-amd64.tar.gz
+mkdir -p ~/go/src/hello
+
+
+
+# install vimplug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+Run vim - will get lots of errors
+:PlugInstall
+
+
+# install node version manager and node stuff
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm ls-remote
+nvm install lts/eribum
+
+
+# install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+
+
+
 # setup vimplug for neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -149,9 +176,7 @@ Other misc stuff I'm finding need to be done...
 
 ln -s ~/workspace/argodev/dotfiles/init.vim ~/.config/nvim/init.vim
 
-# install vimplug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
     
  
 
