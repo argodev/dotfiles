@@ -103,17 +103,35 @@ sys/install.sh
 ```
 
 
+# install zsh
 sudo apt install zsh
+
+# change shell to zsh
 chsh -s /usr/bin/zsh
 
-
-install zsh
-
+# setup oh-my-zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
+# we need to do this *after* installing oh-my-zsh as it will overwrite this file
+# link in zshrc
+ln -s ~/workspace/argodev/dotfiles/zshrc ~/.zshrc
 
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-source ~/.zshrc
+# install (double click on each?) the four MesloLGS NF fonts
+
+
+# setup GnomeTheme for (GooglePlusDar
+sudo apt-get install dconf-cli uuid-runtime
+bash -c  "$(wget -qO- https://git.io/vQgMr)"
+
+- Select option for Google Dark
+- Set default theme
+- set custom font to MesloLGS NF Regular 14 pt
+
+# link in p10k config file
+ln -s ~/workspace/argodev/dotfiles/p10k.zsh ~/.p10k.zsh
+
+
+# full reboot to ensure we pick up the new shell
 
 # setup vimplug for neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -134,4 +152,8 @@ ln -s ~/workspace/argodev/dotfiles/init.vim ~/.config/nvim/init.vim
 # install vimplug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    
+ 
+
+ 
     
