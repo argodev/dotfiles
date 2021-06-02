@@ -86,6 +86,8 @@ echo -e "${YELLOW}[+] Setting up symlinks...${NC}"
 echo
 
 
+# setup tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo 
 echo -e "${GREEN}[*] Operation Complete!${NC}"
