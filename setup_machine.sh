@@ -11,15 +11,18 @@ echo
 
 sudo apt install -y htop vim tmux build-essential git oathtool dconf-cli \
     uuid-runtime python3-pip python3-dev python3-gpg p7zip p7zip-rar \
-    p7zip-full socat x11-xserver-utils fonts-powerline python2 \
-    python2-dev libssl-dev libffi-dev
+    p7zip-full socat x11-xserver-utils fonts-powerline \
+    libssl-dev libffi-dev python3-setuptools
 
 
 echo 
 echo -e "${YELLOW}[+] Installing python packages...${NC}"
 echo 
 
-sudo pip3 install virtualenv psutil pyuv i3ipc \
+# update pip
+sudo pip3 install --upgrade pip
+
+sudo -H pip3 install virtualenv psutil pyuv i3ipc \
     powerline-status capstone filebytes keystone-engine pyvex pwntools
 
 pip3 install virtualenvwrapper
@@ -74,6 +77,13 @@ if [ ! -d "radare2" ]; then
     sys/install.sh
     cd $HOME/workspace/externals
 fi
+
+
+
+# setup links
+echo
+echo -e "${YELLOW}[+] Setting up symlinks...${NC}"
+echo
 
 
 

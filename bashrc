@@ -124,6 +124,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
 source $HOME/.local/bin/virtualenvwrapper.sh
+PATH=$PATH:$HOME/.local/bin;export PATH;
 
 # make capslock as escape
 setxkbmap -option caps:escape
