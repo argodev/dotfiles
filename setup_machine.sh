@@ -12,7 +12,16 @@ echo
 sudo apt install -y htop vim tmux build-essential git oathtool dconf-cli \
     uuid-runtime python3-pip python3-dev python3-gpg p7zip p7zip-rar \
     p7zip-full socat x11-xserver-utils fonts-powerline \
-    libssl-dev libffi-dev python3-setuptools
+    libssl-dev libffi-dev python3-setuptools tree curl
+
+echo 
+echo -e "${YELLOW}[+] Configuring symbolic links...${NC}"
+echo 
+ln -s $PWD/vimrc $HOME/.vimrc
+ln -s $PWD/bash_aliases $HOME/.bash_aliases
+ln -s $PWD/tmux.conf $HOME/.tmux.conf
+mv $HOME/.bashrc $HOME/.bashrc.old
+ln -s $PWD/bashrc $HOME/.bashrc
 
 
 echo 
@@ -78,16 +87,15 @@ if [ ! -d "radare2" ]; then
     cd $HOME/workspace/externals
 fi
 
-
-
-# setup links
-echo
-echo -e "${YELLOW}[+] Setting up symlinks...${NC}"
-echo
-
-
 # setup tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+
+# source our updated bashrc
+. $HOME/.bashrc
+
+# be sure you follow the instructions here:
+# https://medium.com/earlybyte/powerline-for-bash-6d3dd004f6fc
 
 echo 
 echo -e "${GREEN}[*] Operation Complete!${NC}"
