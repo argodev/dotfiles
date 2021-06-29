@@ -139,12 +139,12 @@ export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
 
 # POWERLINE CONFIGURATION
-if [ -f /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh ];
+if [ -f $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ];
 then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
-    source /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
+    source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
 PATH=$PATH:/opt/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 A5B02FDB-5A8A-6E9D-043A-E3E779CD8FFB
