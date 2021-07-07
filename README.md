@@ -177,7 +177,13 @@ Other misc stuff I'm finding need to be done...
 ln -s ~/workspace/argodev/dotfiles/init.vim ~/.config/nvim/init.vim
 
 
-    
+# Setting up token-based auth for GitHub
+
+1. Create a token for this machine/setup: https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+2. Configure the git client to store creds: `git config --global credential.helper 'store --file ~/.git-credentials'`
+3. Do a git pull/push that requires the creds. Enter username and then the token created above as the password.
+4. Confirm creds are stored in `~/.git-credentials` (e.g. `cat`) and confirm that permissions on the file restrict viewing it to just your user account
+
  
 
  
