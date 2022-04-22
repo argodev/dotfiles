@@ -80,12 +80,6 @@ set formatoptions+=M   " don't add space before or after multi-byte char
 set formatoptions-=B   " don't add space between two multi-byte chars in join 
 set formatoptions+=1   " don't break a line after a one-letter word
 
-" requires PLATFORM env variable set (in ~/.bashrc)
-if $PLATFORM == 'mac'
-  " required for mac delete to work
-  set backspace=indent,eol,start
-endif
-
 " stop complains about switching buffer with changes
 set hidden
 
@@ -123,6 +117,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'fatih/vim-go'
   Plug 'airblade/vim-gitgutter'
   Plug 'PProvost/vim-ps1'
+  Plug 'preservim/nerdtree'
   Plug 'arcticicestudio/nord-vim'
   call plug#end()
   let g:go_fmt_fail_silently = 0 " let me out even with errors
@@ -133,9 +128,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
-
-" fill in empty markdown links with duck.com search
-autocmd vimleavepre *.md !perl -p -i -e 's,\[([^\]]+?)\]\(\),[\1](https://duck.com/lite?kae=t&q=\1),g' %
 
 " enable omni-completion
 set omnifunc=syntaxcomplete#Complete
@@ -237,10 +229,10 @@ set fileencoding=utf-8
 " sts - control <tab> and <bs> keys to match tabstop
 
 " Control tab settings for all files
-"set shiftwidth=4
-"set tabstop=4
-"set softtabstop=4
-"set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
 
 " Enable filetype detection
 " Enable plugin
@@ -249,7 +241,7 @@ set fileencoding=utf-8
 
 " Allow backspace to delete indentation and inserted text
 " i.e. how it works in most programs
-"set backspace=indent,eol,start
+set backspace=indent,eol,start
 " indent  allow backspacing over autoindent
 " eol     allow backspacing over line breaks (join lines)
 " start   allow backspacing over the start of insert; CTRL-W and CTRL-U
@@ -518,15 +510,15 @@ endif
 " git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
 "
 " NERDTree plugin specific commands
-":nnoremap <C-n> :NERDTreeToggle<CR>
-"autocmd vimenter * NERDTree
+:nnoremap <C-n> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
 
-"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " make nerdtree open automatically with vim starts up but only if no file was
 " specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_n") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_n") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 
 
