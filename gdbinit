@@ -21,5 +21,5 @@ source /home/ru7/workspace/externals/pwndbg/gdbinit.py
 #end  
 
 # let's turn off the auto-follow of child
-#set follow-fork-mode parent
+set follow-fork-mode parent
 # pwndbg defaults to child
