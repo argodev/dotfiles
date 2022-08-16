@@ -8,3 +8,6 @@ alias please='sudo $(fc -ln -1)'
 alias gpc='globalprotect connect -v vpn.ornl.gov'
 alias gpd='globalprotect disconnect'
 alias gps='globalprotect show --status'
+
+# setup pandoc and docker
+alias pandoc='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) argodev/pandoc'
