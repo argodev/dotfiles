@@ -192,6 +192,10 @@ ln -s ~/workspace/argodev/dotfiles/init.vim ~/.config/nvim/init.vim
 
 ```bash
 sudo apt install zsh zsh-syntax-highlighting autojump zsh-autosuggestions
+# or
+brew install zsh-syntax-highlighting autojump zsh-autosuggestions
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 touch "$HOME/.cache/zshhistory"
 
