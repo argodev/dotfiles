@@ -1,0 +1,27 @@
+# This is largly a copy of the default, with some additional stuff
+# at the end
+
+RCS
+.+,v
+
+CVS
+\.\#.+    # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+
+.+~       # emacs backup files
+\#.*\#    # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+# my custom stuff
+old/*
+

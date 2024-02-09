@@ -1,3 +1,25 @@
+# Argodev's Dotfile collection
+
+I have been using variants of this for the past 7+ years, and constantly seem
+to be in a state of flux. Here I attempt to update this repo using more modern
+tools and techniques, as well as attempting to make it consistent across the
+various platforms I use (Linux, Mac, Windows).
+
+## Prerequisites
+
+As with anything, this system depends on a handful of tools that need to be 
+present on whatever system.
+
+- [GNU Stow](https://gnu.org/software/stow/). This is a "symlink farm manager", which is a fancy way of saying, it can keep/update/maintain the various symlinks needed between my repo and the locations within this machine. On the mac, this can be accomplished via `brew install stow`
+
+
+```bash
+cd $HOME/dotfiles/
+stow .
+
+
+```
+
 # My dotfile collection
 
 This is a simple collection of dotfiles that I use to configure the environment 
