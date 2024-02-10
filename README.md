@@ -10,6 +10,15 @@ various platforms I use (Linux, Mac, Windows).
 As with anything, this system depends on a handful of tools that need to be 
 present on whatever system.
 
+```bash
+# attempting to do this automagically on bash
+sudo apt install curl
+# download the script and run it
+ curl https://raw.githubusercontent.com/argodev/dotfiles/master/setup-linux.sh | bash
+```
+
+
+
 - [GNU Stow](https://gnu.org/software/stow/). This is a "symlink farm manager", which is a fancy way of saying, it can keep/update/maintain the various symlinks needed between my repo and the locations within this machine. On the mac, this can be accomplished via `brew install stow`
 
 
