@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check_preq_exists() {
+check_prereq_exists() {
   # Test to see git is installed
   if ! command -v $1 &> /dev/null
   then
