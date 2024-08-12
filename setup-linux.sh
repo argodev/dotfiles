@@ -18,11 +18,17 @@ for prereq in ${prereqs[@]}; do
 done
 
 
-
 # Scipt Logic
 # Install Prereqs
-# change shell to zsh
-chsh -s /usr/bin/zsh
+
+# change shell to zsh (only if needed)
+current_shell="$(readlink /proc/$$/exe | sed "s/.*\///")"
+if [[ "${script_shell}" != "zsh" ]]
+then
+  chsh -s $(which zsh)
+fi
+
+
 
 # install some fonts
 FONTDIR=$HOME/.local/share/fonts
@@ -34,4 +40,16 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 
 # update the font cache
 fc-cache -fv
+
+# should we prompt the user to reboot/log-out/back in at this point?
+
+
+
+# check if ~/tools is installed or not.
+mkdir -p ~/tools
+
+cd ~/tools
+git clone https://github.com/nordtheme/gnome-terminal.git
+cd nord-gnome-terminal/src
+./nord.sh
 
