@@ -10,7 +10,7 @@ check_prereq_exists() {
 }
 
 # define our list of prepreqs
-prereqs=("git" "vim" "tmux" "tree" "stow" "zsh" "nvim")
+prereqs=("git" "vim" "tmux" "tree" "stow" "zsh" "nvim" "zsh-syntax-highlighting" "autojump" "zsh-autosuggestions")
 
 # loop through the prereqs and install them if needed
 for prereq in ${prereqs[@]}; do
@@ -59,11 +59,6 @@ fi
 # should we prompt the user to reboot/log-out/back in at this point?
 
 
-if [ ! -f /tmp/foo.txt ]; then
-    echo "File not found!"d
-fi
-
-
 # check if ~/tools is installed or not.
 mkdir -p ~/tools
 
@@ -89,4 +84,7 @@ echo "set the font size to 14pt"
 
 
 # let's do the gnu stow magic!
-stow -t ~/
+stow . -t $HOME
+
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/tools/powerlevel10k

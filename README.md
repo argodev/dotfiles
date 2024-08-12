@@ -36,7 +36,7 @@ in which I work. They are posted here for my own uses but anyone else is welcome
 to use them should they in anyway be helpful.
 
 Like most, the files here are derived from experience, learning, but mostly 
-copying the work of others who were kind enough to share their knowlege online.
+copying the work of others who were kind enough to share their knowldege online.
 
 
 ## VIM configuration

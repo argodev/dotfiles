@@ -14,7 +14,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # enable syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/tools/powerlevel10k/powerlevel10k.zsh-theme
 
 
 alias vim=nvim
