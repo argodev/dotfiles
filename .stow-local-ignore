@@ -1,4 +1,4 @@
-# This is largly a copy of the default, with some additional stuff
+# This is largely a copy of the default, with some additional stuff
 # at the end
 
 RCS
@@ -24,4 +24,5 @@ _darcs
 
 # my custom stuff
 old/*
+gnome_term_profile.deconf
 setup-linux.sh

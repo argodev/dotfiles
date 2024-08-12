@@ -10,7 +10,7 @@ check_prereq_exists() {
 }
 
 # define our list of prepreqs
-prereqs=("git" "vim" "tmux" "tree" "stow" "zsh")
+prereqs=("git" "vim" "tmux" "tree" "stow" "zsh" "nvim")
 
 # loop through the prereqs and install them if needed
 for prereq in ${prereqs[@]}; do
@@ -52,7 +52,7 @@ if [ ! -f $FONTDIR/MesloLGSNFBoldItalic.ttf ]; then
 fi
 
 # update the font cache
-if [ $REFRESH_FONTS -eq 1]; then
+if [[ $REFRESH_FONTS -eq 1 ]]; then
   fc-cache -fv
 fi
 
@@ -73,13 +73,20 @@ mkdir -p ~/tools
 #./nord.sh
 
 
-dconf load /org/gnome/terminal/legacy/profiles:/:6bf254fa-7b6b-4a4a-91a0-c7043a5c1cb3/ < gnome_term_profile.dconf
 
 echo "Change your terminal to nord"
-#echo "Set nord as the default"
-#echo " set the font to MesloLGS NF"
-#echo "set the font size to 14pt"
+echo "Set nord as the default"
+echo " set the font to MesloLGS NF"
+echo "set the font size to 14pt"
 
 
 # let's export our terminal profile so we can just import it later
+# NOTE: this didn't work as well as I would have liked...
 # dconf list /org/gnome/terminal/legacy/profiles:/
+# dconf load /org/gnome/terminal/legacy/profiles:/:6bf254fa-7b6b-4a4a-91a0-c7043a5c1cb3/ < gnome_term_profile.dconf
+
+
+
+
+# let's do the gnu stow magic!
+stow -t ~/
