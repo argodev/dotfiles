@@ -32,23 +32,23 @@ fi
 
 # install some fonts
 FONTDIR=$HOME/.local/share/fonts
-REFRESH_FONTS = 0
+REFRESH_FONTS=0
 mkdir -p $FONTDIR
 if [ ! -f $FONTDIR/MesloLGSNFRegular.ttf ]; then
   wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O $FONTDIR/MesloLGSNFRegular.ttf
-  REFRESH_FONTS = 1
+  REFRESH_FONTS=1
 fi
 if [ ! -f $FONTDIR/MesloLGSNFBold.ttf ]; then
   wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O $FONTDIR/MesloLGSNFBold.ttf
-  REFRESH_FONTS = 1
+  REFRESH_FONTS=1
 fi
 if [ ! -f $FONTDIR/MesloLGSNFItalic.ttf ]; then
   wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O $FONTDIR/MesloLGSNFItalic.ttf
-  REFRESH_FONTS = 1
+  REFRESH_FONTS=1
 fi
 if [ ! -f $FONTDIR/MesloLGSNFBoldItalic.ttf ]; then
   wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O $FONTDIR/MesloLGSNFBoldItalic.ttf
-  REFRESH_FONTS = 1
+  REFRESH_FONTS=1
 fi
 
 # update the font cache
