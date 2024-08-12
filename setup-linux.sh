@@ -22,6 +22,7 @@ done
 # Scipt Logic
 # Install Prereqs
 # change shell to zsh
+chsh -s /usr/bin/zsh
 
 # install some fonts
 FONTDIR=$HOME/.local/share/fonts
