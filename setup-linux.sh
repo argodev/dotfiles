@@ -22,8 +22,8 @@ done
 # Install Prereqs
 
 # change shell to zsh (only if needed)
-current_shell="$(readlink /proc/$$/exe | sed "s/.*\///")"
-if [[ "${script_shell}" != "zsh" ]]
+current_shell="$(echo $SHELL | sed "s/.*\///")"
+if [[ "${current_shell}" != "zsh" ]]
 then
   chsh -s $(which zsh)
 fi
@@ -32,17 +32,36 @@ fi
 
 # install some fonts
 FONTDIR=$HOME/.local/share/fonts
+REFRESH_FONTS = 0
 mkdir -p $FONTDIR
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O $FONTDIR/MesloLGSNFRegular.ttf
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O $FONTDIR/MesloLGSNFBold.ttf
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O $FONTDIR/MesloLGSNFItalic.ttf
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O $FONTDIR/MesloLGSNFBoldItalic.ttf
+if [ ! -f $FONTDIR/MesloLGSNFRegular.ttf ]; then
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O $FONTDIR/MesloLGSNFRegular.ttf
+  REFRESH_FONTS = 1
+fi
+if [ ! -f $FONTDIR/MesloLGSNFBold.ttf ]; then
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O $FONTDIR/MesloLGSNFBold.ttf
+  REFRESH_FONTS = 1
+fi
+if [ ! -f $FONTDIR/MesloLGSNFItalic.ttf ]; then
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O $FONTDIR/MesloLGSNFItalic.ttf
+  REFRESH_FONTS = 1
+fi
+if [ ! -f $FONTDIR/MesloLGSNFBoldItalic.ttf ]; then
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O $FONTDIR/MesloLGSNFBoldItalic.ttf
+  REFRESH_FONTS = 1
+fi
 
 # update the font cache
-fc-cache -fv
+if [ $REFRESH_FONTS -eq 1]; then
+  fc-cache -fv
+fi
 
 # should we prompt the user to reboot/log-out/back in at this point?
 
+
+if [ ! -f /tmp/foo.txt ]; then
+    echo "File not found!"
+fi
 
 
 # check if ~/tools is installed or not.
