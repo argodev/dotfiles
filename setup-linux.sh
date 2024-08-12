@@ -10,7 +10,7 @@ check_prereq_exists() {
 }
 
 # define our list of prepreqs
-prereqs=("git" "vim" "tmux" "tree" "stow" "zsh" "nvim" "zsh-syntax-highlighting" "autojump" "zsh-autosuggestions")
+prereqs=("git" "vim" "tmux" "tree" "stow" "zsh" "zsh-syntax-highlighting" "autojump" "zsh-autosuggestions")
 
 # loop through the prereqs and install them if needed
 for prereq in ${prereqs[@]}; do
