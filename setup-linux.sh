@@ -1,36 +1,58 @@
 #!/bin/bash
 
+#==============================================================================
+# HELPER FUNCTIONS
+#==============================================================================
+
 check_prereq_exists() {
   # Test to see git is installed
   if ! command -v $1 &> /dev/null
   then
-    echo "$1 is not installed. Installing it now..."
-    sudo apt install -y $1
+    if [ "$(apt list $1  2>/dev/null | grep -c "installed")" -lt 1 ]; then
+      echo "$1 is not installed. Installing it now..."
+      sudo apt install -y $1
+    fi
   fi
 }
+
+
+#==============================================================================
+# CONSTANTS
+#==============================================================================
 
 # define our list of prepreqs
 prereqs=("git" "vim" "tmux" "tree" "stow" "zsh" "zsh-syntax-highlighting" "autojump" "zsh-autosuggestions")
 
-# loop through the prereqs and install them if needed
+
+
+#==============================================================================
+# MAIN SCRIPT LOGIC
+#==============================================================================
+
+# Install Prereqs
+echo [+] Checking for and installing prerequisites
 for prereq in ${prereqs[@]}; do
   check_prereq_exists $prereq
 done
 
-
-# Scipt Logic
-# Install Prereqs
-
 # change shell to zsh (only if needed)
+echo [+] Ensuring shell is set to zsh
 current_shell="$(echo $SHELL | sed "s/.*\///")"
 if [[ "${current_shell}" != "zsh" ]]
 then
+  echo [+] Current shell is $current_shell. Changing to $(which zsh)
   chsh -s $(which zsh)
+fi
+
+echo [+] Checking for PowerLevel10K
+if [ ! -d "$HOME/tools/powerlevel10k" ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/tools/powerlevel10k
 fi
 
 
 
-# install some fonts
+# Install the nerd fonts
+echo [+] Ensuring the presence of the nerd fonts
 FONTDIR=$HOME/.local/share/fonts
 REFRESH_FONTS=0
 mkdir -p $FONTDIR
@@ -84,10 +106,8 @@ echo "set the font size to 14pt"
 
 
 # let's do the gnu stow magic!
+echo [+] Running gnu stow to ensure dotfiles are linked
 stow . -t $HOME
 
 
-if [ ! -d "$HOME/tools/powerlevel10k" ]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/tools/powerlevel10k
-fi
 
