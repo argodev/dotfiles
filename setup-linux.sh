@@ -60,7 +60,7 @@ fi
 
 
 if [ ! -f /tmp/foo.txt ]; then
-    echo "File not found!"
+    echo "File not found!"d
 fi
 
 
@@ -69,6 +69,6 @@ mkdir -p ~/tools
 
 cd ~/tools
 git clone https://github.com/nordtheme/gnome-terminal.git
-cd nord-gnome-terminal/src
+cd gnome-terminal/src
 ./nord.sh
 
