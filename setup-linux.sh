@@ -67,8 +67,19 @@ fi
 # check if ~/tools is installed or not.
 mkdir -p ~/tools
 
-cd ~/tools
-git clone https://github.com/nordtheme/gnome-terminal.git
-cd gnome-terminal/src
-./nord.sh
+#cd ~/tools
+#git clone https://github.com/nordtheme/gnome-terminal.git
+#cd gnome-terminal/src
+#./nord.sh
 
+
+dconf load /org/gnome/terminal/legacy/profiles:/:6bf254fa-7b6b-4a4a-91a0-c7043a5c1cb3/ < gnome_term_profile.dconf
+
+echo "Change your terminal to nord"
+#echo "Set nord as the default"
+#echo " set the font to MesloLGS NF"
+#echo "set the font size to 14pt"
+
+
+# let's export our terminal profile so we can just import it later
+# dconf list /org/gnome/terminal/legacy/profiles:/
